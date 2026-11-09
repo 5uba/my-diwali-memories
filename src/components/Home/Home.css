@@ -1,0 +1,232 @@
+/* ===== HOME PAGE ===== */
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    160deg,
+    #1a0a00 0%,
+    #3d1500 30%,
+    #7a2e00 60%,
+    #c05e00 85%,
+    #e8900a 100%
+  );
+  overflow: hidden;
+}
+
+/* Subtle radial glow in the centre */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(245, 180, 40, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 65%, rgba(245, 180, 40, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 48px 24px;
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  font-size: 1rem;
+  color: #f5c842;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  color: #fff8e8;
+  font-family: 'Georgia', serif;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 24px rgba(200, 100, 0, 0.6);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #ffd98a;
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: #f5c842;
+  color: #3a1800;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(245, 180, 40, 0.35);
+}
+
+.hero-btn:hover {
+  background-color: #ffd54a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(245, 180, 40, 0.5);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+}
+
+/* ---- Date Strip ---- */
+.date-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #3d1500;
+  padding: 12px 24px;
+  color: #ffd98a;
+}
+
+.date-strip-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.date-strip-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* ---- Intro Section ---- */
+.home-intro {
+  padding: 60px 24px 72px;
+}
+
+.intro-card {
+  background-color: #fffaf0;
+  border: 1px solid #e8d8a0;
+  border-radius: 12px;
+  padding: 40px 48px;
+  text-align: center;
+  margin-bottom: 44px;
+  box-shadow: 0 2px 16px rgba(180, 120, 0, 0.07);
+}
+
+.intro-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.intro-card h2 {
+  font-size: 1.5rem;
+  color: #c05e00;
+  margin-bottom: 16px;
+}
+
+.intro-card p {
+  color: #5c3d1e;
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 10px;
+}
+
+.intro-card p:last-child {
+  margin-bottom: 0;
+  font-style: italic;
+  color: #7a5234;
+}
+
+.intro-closing {
+  margin-top: 16px !important;
+  padding-top: 16px;
+  border-top: 1px solid #e8d8a0;
+  font-style: italic;
+  color: #b85000 !important;
+  font-size: 1rem;
+}
+
+/* ---- Highlights row ---- */
+.intro-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #fffaf0;
+  border: 1px solid #e8d8a0;
+  border-radius: 10px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(180, 120, 0, 0.12);
+}
+
+.highlight-item span {
+  font-size: 1.9rem;
+}
+
+.highlight-item p {
+  font-size: 0.88rem;
+  color: #7a5234;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 760px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .intro-card {
+    padding: 28px 24px;
+  }
+
+  .intro-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .intro-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
